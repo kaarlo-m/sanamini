@@ -29,16 +29,18 @@ def load_dictionary():
     file=open("dictionary.txt")
     return file
 
-def check_word(chain)
+def check_word(word)
     #return all words continuing from currently checked letter chain, if none found ..., if one found, if multiple found
-    words=[]
-    
-    for i in dictionary:
-        if i[len(chain)]==word:
-            words.append(i)
-
-    return words
-def score_board(words):
+    sub_dictionary=[]
+    for letter in word:
+        found=0
+        for i in dictionary:
+            if i[0]==letter:
+                sub_dictionary.append(i)
+                found=1
+            elif found==1:
+                break
+    return sub_dictionary
 
 
 test=[]
