@@ -2,7 +2,7 @@
 
 
 
-def neighbors(node):
+def list_neighbors(node):
     dirs=[[1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1], [0,-1], [1,-1]]
     result=[]
     for dir in dirs:
@@ -29,18 +29,39 @@ def load_dictionary():
     file=open("dictionary.txt")
     return file
 
-def check_word(word)
+def filter_dict(word, sub_dictionary)
     #return all words continuing from currently checked letter chain, if none found ..., if one found, if multiple found
-    sub_dictionary=[]
     for letter in word:
         found=0
-        for i in dictionary:
-            if i[0]==letter:
-                sub_dictionary.append(i)
-                found=1
-            elif found==1:
-                break
+        for i in sub_dictionary: 
+            if i[0:len(word)] != word:    
+                sub_dictionary.remove(i)
     return sub_dictionary
+
+def check_node(node, sub_dict)
+    
+
+def chain(root)
+    neighbors=list_neighbors(root)
+    sub_dict=filter_dict(root, dictionary)
+    for i in neighbors:
+        word=root.append(i)
+        sub_dict=filter_dict(word,sub_dict)
+        if not sub_dict:
+            continue
+        elif len(sub_dict)==1:
+            result.append(word)
+            continue
+        for j in i:
+            word=word.append(j)
+
+
+        
+
+def traverse(root)
+    for root in all_nodes:
+
+    
 
 
 test=[]
